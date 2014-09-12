@@ -1,0 +1,9 @@
+{
+  "name": "synthdemo",
+  "private": true,
+  "dependencies": {
+    "angular": "1.x",
+    "angular-route": "1.x",
+    "bootstrap": "~3.2.0"
+  }
+}

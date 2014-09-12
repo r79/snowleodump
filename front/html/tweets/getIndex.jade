@@ -1,0 +1,9 @@
+div(class="text-center")
+	textarea(ng-model="newTweet")
+	button(ng-click="publish()", ng-disabled="newTweet.length == 0") Publish! :D
+
+ul.tweet-timeline
+	li.tweet(ng-repeat="tweet in tweets")
+		.content {{ tweet.content}}
+		a(href="/tweets/{{ tweet._id }}")
+			.date {{ tweet.created_at | date:'medium' }}
