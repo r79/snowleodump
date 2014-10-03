@@ -1,9 +1,15 @@
-div(class="text-center")
-	textarea(ng-model="newTweet")
-	button(ng-click="publish()", ng-disabled="newTweet.length == 0") Publish! :D
+div(class="text-center",
+    flow-init="{target:'/images/upload'",
+    flow-files-submitted="$flow.upload",
+    flow-file-success="$file.msg = $message")
+    h2 New Tweet:
+    textarea(ng-model="newTweet")
+    button(ng-click="publish()", ng-disabled="newTweet.length == 0") Publish! :D
+    input(type="")
+
 
 ul.tweet-timeline
-	li.tweet(ng-repeat="tweet in tweets")
-		.content {{ tweet.content}}
-		a(href="/tweets/{{ tweet._id }}")
-			.date {{ tweet.created_at | date:'medium' }}
+    li.tweet(ng-repeat="tweet in tweets")
+        .content {{ tweet.content}}
+        a(href="/tweets/{{ tweet._id }}")
+            .date {{ tweet.created_at | date:'medium' }}
